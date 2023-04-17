@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Event List</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Entry_fees</th>
+        <th scope="col">Event Time</th>
+        <th scope="col">Details</th>
+        <th scope="col">Register</th>
+        
+      </tr>
+    </thead>
+    <%@events.each do |event|%>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.category %></td>
+        <td><%= event.entry_fees %></td>
+        <td><%= event.starting_time %></td>
+        <td><%= link_to 'Details', event %></td>
+        <td><%= link_to "Participant", participant_event_path(event), class:"btn btn-info" %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "Add Event", new_event_path, class:"btn btn-primary"  %>
+  <%= link_to "Logout", users_logout_path, class:"btn btn-primary"  %>
+</div>

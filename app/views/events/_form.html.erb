@@ -1,0 +1,21 @@
+<%= form_with model: @event do |form| %>
+  <div>
+    <%= form.label :name,class:"col-sm-2 col-form-label" %><br>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+  <div>
+    <%= form.label :category, class:"col-sm-2 col-form-label" %><br>
+    <%= form.text_field :category, class:"form-control" %>
+  </div>
+  <div>
+    <%= form.label :entry_fees, class:"col-sm-2 col-form-label" %><br>
+    <%= form.text_field :entry_fees, class:"form-control" %>
+  </div>
+  <div>
+    <%= form.datetime_local_field :starting_time %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>
