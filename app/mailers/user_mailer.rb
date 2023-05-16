@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
   default from: 'demo42424242@gmail.com'
+  
   def welcome_email(user)
     @user = user
     mail(to: @user.email, subject: "User Is Created.")
