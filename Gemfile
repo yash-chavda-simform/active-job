@@ -33,6 +33,7 @@ gem "faker"
 #sidekiq for background job
 gem 'sidekiq', '~> 6.5.5'
 gem 'sidekiq-cron'
+
 #bootstrap
 gem 'bootstrap'
 

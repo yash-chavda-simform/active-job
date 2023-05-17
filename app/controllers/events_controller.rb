@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
+      flash[:success] = "Event Created."
       redirect_to events_path
     else
       render :new, status: :unprocessable_entity
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
+      flash[:success] = "Event Updated."
       redirect_to events_path
     else
       render :edit, status: :unprocessable_entity
@@ -32,7 +34,11 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.delete
+    if @event.destroy
+      flash[:success] = "Event Deleted."
+    else
+      flash[:danger] = "Event Not Deleted."
+    end
     redirect_to events_path
   end
 
@@ -48,6 +54,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.require(:event).permit(:name, :category, :entry_fees, :starting_time)
   end

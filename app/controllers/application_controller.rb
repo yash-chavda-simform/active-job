@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
   def require_login
     unless current_user
       redirect_to users_login_path, flash:{ danger: "You need to login first"}
