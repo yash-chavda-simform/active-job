@@ -4,18 +4,22 @@
     <div>
       <%= form.label :first_name ,class:"col-sm-2 col-form-label" %>
       <%= form.text_field :first_name, class:"form-control" %>
+      <%= @user.errors.full_messages_for(:first_name).first %>
     </div>
     <div>
       <%= form.label :last_name, class:"col-sm-2 col-form-label" %>
       <%= form.text_field :last_name, class:"form-control" %>
+      <%= @user.errors.full_messages_for(:last_name).first %>
     </div>
     <div>
       <%= form.label :email, class:"col-sm-2 col-form-label" %>
       <%= form.text_field :email, class:"form-control" %>
+      <%= @user.errors.full_messages_for(:email).first %>
     </div>
     <div>
       <%= form.label :password, class:"col-sm-2 col-form-label" %>
       <%= form.password_field :password, class:"form-control" %>
+      <%= @user.errors.full_messages_for(:password).first %>
     </div>
     <br>
     <div>
