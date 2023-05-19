@@ -44,11 +44,11 @@ class EventsController < ApplicationController
 
   def participant
     @event = Event.find(params[:id])
-    if current_user.events.include?(@event)
-      flash[:danger] = "Already Participanted."
+    flash[:notice] = if current_user.events.include?(@event)
+       "Already Participanted."
     else
       current_user.events << @event
-      flash[:success] = "Participanted Successfully."
+      "Participanted Successfully."
     end
     redirect_to events_path
   end
