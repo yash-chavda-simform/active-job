@@ -1,0 +1,11 @@
+event_create_job:
+  cron: "0 * * * *" #execute every hour 
+  class: "CreateEventJob"
+
+send_event_list_job:
+  cron: "0 12 * * *" #execute every day at 12 pm
+  class: "SendEventListJob"
+
+reminder_event_job:
+  cron: "0 * * * *"
+  class: "EventReminderJob" 
